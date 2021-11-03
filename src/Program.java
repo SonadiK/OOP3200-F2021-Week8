@@ -25,7 +25,7 @@ public class Program
      * This function builds an array of person objects by instantiating Num_OF_PEOPLE Person objects
      * @param people an array of Person objects
      */
-    public static void buildPersonArray(Person[] people)
+    /**public static void buildPersonArray(Person[] people)
     {
         for (int i = 0; i < NUM_OF_PEOPLE; i++)
         {
@@ -47,6 +47,14 @@ public class Program
         {
             people.add(new Person());
         }
+    }*/
+
+    public static void buildStudentLinkedList(LinkedList<Student> student)
+    {
+        for (int i = 0; i < NUM_OF_PEOPLE; i++)
+        {
+            student.add(new Student());
+        }
     }
 
     /**
@@ -55,13 +63,16 @@ public class Program
      */
     public static void main(String[] args)
     {
-        LinkedList<Person> people = new LinkedList<Person>();
+        var students = new LinkedList<Student>();
+
+        //LinkedList<Person> people = new LinkedList<Person>();
 
         ///ArrayList<Person> people = new ArrayList<Person>(); // creates a new empty list of Person object shape.
         //Person[] people = {new Person("Mike", 25), new Person("Joe", 10)};
         //Person[] people = new Person[NUM_OF_PEOPLE];
 
-        buildPersonLinkedList(people);
+        buildStudentLinkedList(students);
+        //buildPersonLinkedList(people);
         //buildPersonArray(people);
         //buildPersonArrayList(people);
 
@@ -86,14 +97,21 @@ public class Program
         System.out.print("Enter your age: ");
         int age = inputObject.nextInt();
 
-        Person person = new Person( name,age);
-        people.set(0, person);
+        System.out.print("Enter your StudentID: ");
+        String studentID = inputObject.nextLine();
+
+        //Person person = new Person( name,age);
+        //people.set(0, person);
         //person.SaysHello();
         //System.out.println(person);
+        Student student = new Student( name,age, studentID);
 
         //System.out.println("The first person is: " + people.get(0).getName());
         //System.out.println(people);
-        people.get(0).SaysHello();
+        //people.get(0).SaysHello();
+        students.set(0, student);
+        students.get(0).SaysHello();
+        students.get(0).Studies();
 
     }
 }
