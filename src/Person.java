@@ -8,6 +8,10 @@ public class Person
         Set(name, age);
     }
 
+    Person()
+    {
+        Set("unknown", 0);
+    }
     public int getAge()
     {
         return m_age;
@@ -37,6 +41,16 @@ public class Person
     public void SaysHello()
     {
         System.out.println(getName() + " says Hello!");
+    }
+
+    @Override
+    public String toString()
+    {
+        String outputString = "";
+        outputString += "Name: " + getName()+ "\n";
+        outputString += "Age: " + getAge() + "\n";
+
+        return outputString;
     }
 
 }
